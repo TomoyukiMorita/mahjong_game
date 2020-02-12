@@ -20,28 +20,22 @@ from yaku_check_v2 import *
 from chadef import *
 import cppfunc
 
-dir_image_button = "./haiga-m/"
-
-dir_image_button_small = "./haiga-s/"
+dir_image_button = "./t_real2/"
 
 shu_image_button = [
-    "man1.gif", "man2.gif", "man3.gif", "man4.gif", "man5.gif", "man6.gif", "man7.gif", "man8.gif", "man9.gif",
-    "pin1.gif", "pin2.gif", "pin3.gif", "pin4.gif", "pin5.gif", "pin6.gif", "pin7.gif", "pin8.gif", "pin9.gif",
-    "sou1.gif", "sou2.gif", "sou3.gif", "sou4.gif", "sou5.gif", "sou6.gif", "sou7.gif", "sou8.gif", "sou9.gif",
-    "ji1-ton.gif", "ji2-nan.gif", "ji3-sha.gif", "ji4-pei.gif", "ji5-haku.gif", "ji6-hatsu.gif", "ji7-chun.gif",
-    "man-aka5.gif", "pin-aka5.gif", "sou-aka5.gif", "ura.gif"
+    "m1.png", "m2.png", "m3.png", "m4.png", "m5.png", "m6.png", "m7.png", "m8.png", "m9.png",
+    "p1.png", "p2.png", "p3.png", "p4.png", "p5.png", "p6.png", "p7.png", "p8.png", "p9.png",
+    "s1.png", "s2.png", "s3.png", "s4.png", "s5.png", "s6.png", "s7.png", "s8.png", "s9.png",
+    "j1.png", "j2.png", "j3.png", "j4.png", "j5.png", "j6.png", "j7.png",
+    "me.png", "pe.png", "se.png", "j9.png"
 ]
 
 shu_image_yoko = [
-    "yoko-man1.gif", "yoko-man2.gif", "yoko-man3.gif", "yoko-man4.gif", "yoko-man5.gif", "yoko-man6.gif",
-    "yoko-man7.gif", "yoko-man8.gif", "yoko-man9.gif",
-    "yoko-pin1.gif", "yoko-pin2.gif", "yoko-pin3.gif", "yoko-pin4.gif", "yoko-pin5.gif", "yoko-pin6.gif",
-    "yoko-pin7.gif", "yoko-pin8.gif", "yoko-pin9.gif",
-    "yoko-sou1.gif", "yoko-sou2.gif", "yoko-sou3.gif", "yoko-sou4.gif", "yoko-sou5.gif", "yoko-sou6.gif",
-    "yoko-sou7.gif", "yoko-sou8.gif", "yoko-sou9.gif",
-    "yoko-ji1-ton.gif", "yoko-ji2-nan.gif", "yoko-ji3-sha.gif", "yoko-ji4-pei.gif", "yoko-ji5-haku.gif",
-    "yoko-ji6-hatsu.gif", "yoko-ji7-chun.gif",
-    "yoko-man-aka5.gif", "yoko-pin-aka5.gif", "yoko-sou-aka5.gif"
+    "2m1.png", "2m2.png", "2m3.png", "2m4.png", "2m5.png", "2m6.png", "2m7.png", "2m8.png", "2m9.png",
+    "2p1.png", "2p2.png", "2p3.png", "2p4.png", "2p5.png", "2p6.png", "2p7.png", "2p8.png", "2p9.png",
+    "2s1.png", "2s2.png", "2s3.png", "2s4.png", "2s5.png", "2s6.png", "2s7.png", "2s8.png", "2s9.png",
+    "2j1.png", "2j2.png", "2j3.png", "2j4.png", "2j5.png", "2j6.png", "2j7.png",
+    "2me.png", "2pe.png", "2se.png", "2j9.png"
 ]
 
 
@@ -328,10 +322,12 @@ class MainWindow(Tk):
             filename = dir_image_button + shu_image_button[i]
             img = PhotoImage(file=filename)
             self.pai_images.append(img)
-            img_small = img.subsample(2)
+            # img_small = img.subsample(2)
+            img_small = img
             self.pai_images_small.append(img_small)
             if i != 37:
-                img_small_yoko = PhotoImage(file=dir_image_button + shu_image_yoko[i]).subsample(2)
+                # img_small_yoko = PhotoImage(file=dir_image_button + shu_image_yoko[i]).subsample(2)
+                img_small_yoko = PhotoImage(file=dir_image_button + shu_image_yoko[i])
                 self.pai_images_small_yoko.append(img_small_yoko)
 
         self.__create_widgets()
